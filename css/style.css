@@ -1,0 +1,89 @@
+body {
+	padding:15px;
+	margin:0;
+	font-family: "Raleway";
+	}
+
+.result {
+	text-align: center;
+}
+
+.result-container {
+	display: inline-block;
+	border: 1px solid #DDDDDD;
+	background: #EEEEEE;
+	border-radius: 8px;
+	padding:1em;
+	margin:.5em;
+}
+
+.result-container  h3 {
+	text-align: center;
+	color:rgb(255,87,0);
+	text-shadow:0px 1px 0px #FFFFFF;
+}
+
+.result-container img {
+	width: 100%;
+}
+
+#presentation {
+	border: solid 3px rgb(255,87,0);
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	text-align: left;
+	padding: 20px;
+	cellspacing:;
+}
+
+#graphic {
+	border: solid 1px rgb(255,87,0);
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+#logo {
+	float:left;
+}
+
+#thanks {
+	margin-top:5%;
+}
+
+.blink_text {
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+
+	-moz-animation-name: blinker;
+	-moz-animation-duration: 2s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+
+	animation-name: blinker;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	color: red;
+}
+
+@-moz-keyframes blinker {  
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
