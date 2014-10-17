@@ -6,8 +6,10 @@
     // Maximum number of actors
     $scope.maxActors = 3;
 
-    // Current actors displayed
+    // Current data
     $scope.currentActors = [];
+    $scope.currentMethod = '';
+    $scope.currentPeriod = '';
 
     // Add a new (empty) actor
     $scope.addActor = function() {
@@ -54,6 +56,11 @@
       { code: "DayInWeek",   text: "Jour dans la semaine" },
       { code: "DayInMonth",  text: "Jour dans le mois" },
       { code: "HourInDay",   text: "Heure dans la journée" },
+    ];
+
+    $scope.possibleMethods = [
+      { code: "count", text: "Nombre de messages" },
+      { code: "length", text: "Longueur des messages" }
     ];
   });
 

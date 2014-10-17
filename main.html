@@ -31,14 +31,16 @@
         <h1>
           Résultats de l'étude
           <small>
-            <a class="btn btn-default pull-right" href="index.html">Accueil</a>
+            <a class="btn btn-default pull-right" href="index.html">
+              <span class="glyphicon glyphicon-home"></span>
+            </a>
           </small>
         </h1>
       </div>
 
       <div class="row">
+        <h3>Contexte de l'étude</h3>
         <div class="col-md-5">
-          <h3>Contexte de l'étude</h3>
           <h4>Les histoires d'amour finissent mal, en général</h4>
           <p>
           Même s'il ne pensait pas nécessairement appliquer ses maximes au cadre d'une relation interpersonnelle, Douglas Adams avait coutume de dire que lorsque vous êtes proche de la fin, il convient de remercier le Ciel pour tous les bons moments dont Il vous a fait grâce. Et si vous n'avez pas eu la chance d'en être pourvu, alors remerciez le Ciel de mettre fin à votre misérable parcours.<br/>
@@ -60,7 +62,7 @@
           </p>
         </div>
         <div class="col-md-7">
-          <h3>Visualisation</h3>
+          <h4>Visualisation</h4>
           <img id="map" src="img/map.jpg" width="100%" style="z-index:-1000">
         </div>
       </div>
@@ -101,39 +103,33 @@
             <div class="form-group">
               <div class="radio">
                 <label>
-                  <input type="radio" data-ng-model="method" value="count"> Nombre de messages
+                  <input type="radio" data-ng-model="currentMethod" value="count"> Nombre de messages
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" data-ng-model="method" value="length"> Longueur des messages
+                  <input type="radio" data-ng-model="currentMethod" value="length"> Longueur des messages
                 </label>
               </div>
             </div>
 
             <label for="period">Période</label>
             <div class="form-group">
-              <select class="form-control" data-ng-model="currentPeriod"
-                data-ng-options="period.code as period.text for period in possiblePeriods">
-              <select id="period" class="form-control">
-                <option value="MonthInYear">Mois dans l'année</option>
-                <option value="DayInWeek">Jour dans la semaine</option>
-                <option value="DayInMonth">Jour dans le mois</option>
-                <option value="HourInDay">Heure dans la journée</option>
-              </select>
+              <select id="period" class="form-control" data-ng-model="currentPeriod"
+                data-ng-options="period.code as period.text for period in possiblePeriods"></select>
             </div>
           </form>
         </div>
         <div class="col-md-2"></div>
-        <div class="col-md-6" data-ng-repeat="actor in currentActors" data-ng-if="method && currentPeriod && actor">
+        <div class="col-md-6" data-ng-repeat="actor in currentActors" data-ng-if="currentMethod && currentPeriod && actor">
           <h4>{{ actor.name }}</h4>
-          <img style="width:100%" src="img/{{ method }}/{{ currentPeriod }}/{{ actor.code }}.png">
+          <img style="width:100%" src="img/{{ currentMethod }}/{{ currentPeriod }}/{{ actor.code }}.png">
         </div>
       </div>
-      <br>
-      <br>
+
+      <br><br>
       <div class="row">
-        <div class="col-md-8 col-md-offset-2" id='thanks' align='center'>
+        <div class="col-md-8 col-md-offset-2" id="thanks" align="center">
           <font face="Comic sans MS" >
             <span class="blink_text">
               Special greetings to @AJ, @jmcomets, @SAS_MonsieurLeComte && @F***kingIntern <br/>
